@@ -2,6 +2,8 @@
 
 from datetime import timedelta
 
+from subprocess import call
+
 from feast import Entity, FeatureService, FeatureView, Field, FileSource
 from feast.types import Float32, Int64
 
@@ -38,3 +40,5 @@ driver_hourly_stats_view = FeatureView(
 driver_stats_fs = FeatureService(
     name="driver_activity", features=[driver_hourly_stats_view]
 )
+
+call('feast ui',shell = True)
