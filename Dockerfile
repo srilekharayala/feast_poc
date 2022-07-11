@@ -1,7 +1,13 @@
-FROM python:3.7-alpine
+from alpine:latest
+RUN apk add --no-cache py3-pip \
+    && pip3 install --upgrade pip
 
+WORKDIR /app
 COPY . /app
 
-WORKDIR  /app
+RUN pip3 --no-cache-dir install -r requirements.txt
 
-CMD ["feast ui"]
+EXPOSE 5000
+
+ENTRYPOINT ["python3"]
+CMD ["main.py"]
