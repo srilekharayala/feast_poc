@@ -41,4 +41,3 @@ driver_stats_fs = FeatureService(
     name="driver_activity", features=[driver_hourly_stats_view]
 )
 
-print("Hello World")
