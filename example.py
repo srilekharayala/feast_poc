@@ -41,4 +41,4 @@ driver_stats_fs = FeatureService(
     name="driver_activity", features=[driver_hourly_stats_view]
 )
 
-call('feast ui',shell = True)
+print("Hello World")
